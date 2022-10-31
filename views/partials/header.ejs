@@ -9,9 +9,9 @@
 </head>
 <body>
   <nav>
-    <a href="/" <%- title === '' ? 'class="active"' : '' %>>HOME</a> | 
+    <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a> | 
+    <a href="/leagues" <%- title === 'Find a League' ? 'class="active"' : '' %>>FIND A LEAGUE</a> | 
   <% if (user) { %>
-    <a href="/leagues" <%- title === 'Find a League' ? 'class="active"' : '' %>>FIND A LEAGUE</a>
     <a href="" <%- title === '' ? 'class="active"' : '' %>></a>
     <a href="/logout">LOG OUT</a>
   <% } else { %>

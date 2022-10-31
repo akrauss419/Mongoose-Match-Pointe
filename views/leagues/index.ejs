@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<h2>What's your skill level? (Choose a League)</h2>
+<div>
+    <ul>
+        <% leagues.map(function(l) { %>
+        <li><%= l.skillLevel %><a href="/leagues/<%= l._id %>">View League Page</a></li>
+        <% }) %>
+    </ul>
+</div>
+
+<div>
+    <a href="/leagues/new">Add a League</a>
+</div>
+
+<%- include('../partials/footer') %>

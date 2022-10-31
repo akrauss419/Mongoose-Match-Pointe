@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<h2>Create a New League</h2>
+<form action="/leagues" method="POST">
+  <label>Skill Level (League Name):
+    <select name="skillLevel">
+        <option value="5.0">5.0</option>
+        <option value="4.5">4.5</option>
+        <option value="4.0">4.0</option>
+        <option value="3.5">3.5</option>
+        <option value="3.0">3.0</option>
+    </select>
+  </label>
+
+  <label>Teams:
+    <input type="text" name="teams">
+  </label>
+
+  <button type="submit">Add League</button>
+</form>
+
+<%- include('../partials/footer') %>
