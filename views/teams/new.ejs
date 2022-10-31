@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<h2>Add a New Team</h2>
+<form action="/leagues/<%= leagueId %>/teams" method="POST">
+    <label>Team Name:
+      <input type="text" name="name">
+    </label>
+
+    <label>Wins:
+      <input type="number" name="wins" value="0">
+    </label>
+
+    <label>Losses:
+      <input type="number" name="losses" value="0">
+    </label>
+
+    <label>Practice Schedule:
+      <input type="datetime-local" name="practices">
+    </label>
+
+    <button type="submit">Add Team to League</button>
+  </form>
+
+<%- include('../partials/footer') %>

@@ -3,23 +3,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const leagueSchema = new Schema ({
-    skillLevel: String,
-    teams: String,
+    skillLevel: {
+        type: String,
+        enum: ['5.0', '4.5', '4.0', '3.5', '3.0']
+    },
     standings: String,
     scores: String
 }, {
     timestamps: true
 });
-
-// const teamSchema = new Schema ({
-//     name: String,
-//     players: String,
-//     schedule: String,
-//     wins: Number,
-//     losses: Number,
-//     practices: Date,
-// }, {
-//     timestamps: true
-// });
 
 module.exports = mongoose.model('League', leagueSchema);

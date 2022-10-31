@@ -14,7 +14,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var leaguesRouter = require('./routes/leagues');
-// var teamsRouter = require('./routes/teams');
+var teamsRouter = require('./routes/teams');
 
 var app = express();
 
@@ -42,7 +42,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/leagues', leaguesRouter);
-// app.use('/teams', teamsRouter);
+app.use('/', teamsRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));

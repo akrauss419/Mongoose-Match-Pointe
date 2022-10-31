@@ -1,4 +1,5 @@
 const League = require('../models/league');
+const Team = require('../models/team');
 
 module.exports = {
     index,
@@ -15,7 +16,9 @@ function index(req, res) {
 
 function show(req, res) {
     League.findById(req.params.id, function(err, league) {
-        res.render('leagues/show', {title: 'League Home Page', league});
+        Team.find({league: league._id}, function(err, teams) {
+            res.render('leagues/show', {title: 'League Home Page', league, teams});
+        });
     }); 
 }
 

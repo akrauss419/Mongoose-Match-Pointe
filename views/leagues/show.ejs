@@ -5,8 +5,13 @@
 <h3>TEAMS</h3>
 <section>
     <ul>
-     
+        <% teams.map(function(t) { %>
+            <li><%= t.name %><a href="/<%= t._id %>">Team Home Page</a></li>
+        <% }) %>
     </ul>
 </section>
+
+<a href="/leagues/<%= league._id %>/teams/new">Add a New Team</a>
+
 
 <%- include('../partials/footer') %>
