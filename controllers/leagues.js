@@ -5,7 +5,8 @@ module.exports = {
     index,
     show,
     new: newLeague,
-    create
+    create,
+    delete: deleteLeague,
 };
 
 function index(req, res) {
@@ -27,11 +28,19 @@ function newLeague(req, res) {
 }
 
 function create(req, res) {
-    console.log('league');
+    req.body.user = req.user._id;
     const league = new League(req.body);
     league.save(function(err) {
         console.log(err);
         if (err) return res.redirect('/leagues/new');
         res.redirect(`/leagues/${league._id}`);
     });
+}
+
+function deleteLeague(req, res) {
+    League.findOneAndDelete(
+        {_id: req.params.id, userRecommending: req.user._id}, function (err) {
+            res.redirect('/leagues');
+        }
+    );
 }

@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+<div class="add-edit-form">
+    <h2>Edit Your Team</h2>
+    <form action="/leagues/<%= league._id %>/teams/<%= team._id %>?_method=PUT" method="POST">
+
+        <span class="form-organizer">
+            <label>Team Name:
+                <input type="text" name="name" id="team-input" value="<%= team.name %>">
+            </label>
+        </span>
+
+        <span class="form-organizer">
+            <label>Wins:
+                <input type="number" name="wins" id="wins" value="<%= team.wins %>">
+            </label>
+        </span>
+
+        <span class="form-organizer">
+            <label>Losses:
+                <input type="number" name="losses" id="losses" value="<%= team.losses %>">
+            </label>
+        </span>
+
+        <span class="form-organizer">
+            <label>Practice Schedule:
+                <input type="datetime-local" name="practices" id="practices" value="<%= team.practices %>">
+            </label>
+        </span>
+
+        <button type="submit" id="update-team">Update Team Details</button>
+    </form>
+</div>
+
+<%- include('../partials/footer') %>

@@ -1,24 +1,35 @@
 <%- include('../partials/header') %>
 
-<h2>Add a New Team</h2>
-<form action="/leagues/<%= leagueId %>/teams" method="POST">
-    <label>Team Name:
-      <input type="text" name="name">
-    </label>
+<div class="add-edit-form">
+    <h2>Add a New Team</h2>
+    <form action="/leagues/<%= leagueId %>/teams" method="POST">
 
-    <label>Wins:
-      <input type="number" name="wins" value="0">
-    </label>
+        <span class="form-organizer">
+            <label>Team Name:
+                <input type="text" name="name" id="team-input">
+            </label>
+        </span>
 
-    <label>Losses:
-      <input type="number" name="losses" value="0">
-    </label>
+        <span class="form-organizer">
+            <label>Wins:
+                <input type="number" name="wins" value="0" id="wins">
+            </label>
+        </span>
 
-    <label>Practice Schedule:
-      <input type="datetime-local" name="practices">
-    </label>
+        <span class="form-organizer">
+            <label>Losses:
+                <input type="number" name="losses" value="0" id="losses">
+            </label>
+        </span>
 
-    <button type="submit">Add Team to League</button>
-  </form>
+        <span class="form-organizer">
+            <label>Practice Schedule:
+                <input type="datetime-local" name="practices" id="practices">
+            </label>
+        </span>
+
+        <button type="submit" id="add-to-league">Add Team to League</button>
+    </form>
+</div>
 
 <%- include('../partials/footer') %>

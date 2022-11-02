@@ -1,18 +1,76 @@
 <%- include('../partials/header') %>
 
-<h2>Create a New League</h2>
-<form action="/leagues" method="POST">
-  <label>Skill Level (League Name):
-    <select name="skillLevel">
-        <option value="5.0">5.0</option>
-        <option value="4.5">4.5</option>
-        <option value="4.0">4.0</option>
-        <option value="3.5">3.5</option>
-        <option value="3.0">3.0</option>
-    </select>
-  </label>
+<div class="add-edit-form">
+  <h2>Create a New League</h2>
+  <form action="/leagues" method="POST">
 
-  <button type="submit">Add League</button>
-</form>
+    <span class="form-organizer">
+      <label>Skill Level (League Name):</label>
+        <select name="skillLevel" id="skill-level">
+          <option value="5.0">5.0</option>
+          <option value="4.5">4.5</option>
+          <option value="4.0">4.0</option>
+          <option value="3.5">3.5</option>
+          <option value="3.0">3.0</option>
+        </select>
+    </span>
+
+    <span class="form-organizer">
+      <label id="match-format-label">Match Format</label>
+    </span>
+
+    <span class="form-organizer">
+      <label>Men's Singles:</label>
+        <select name="mensSingles" id="mens-singles">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+    </span>
+
+    <span class="form-organizer">
+      <label>Women's Singles:</label>
+        <select name="womensSingles" id="womens-singles">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+    </span>
+
+    <span class="form-organizer">
+      <label>Men's Doubles:</label>
+        <select name="mensDoubles" id="mens-doubles">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+    </span>
+
+    <span class="form-organizer">
+      <label>Women's Doubles:</label>
+        <select name="womensDoubles" id="womens-doubles">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+    </span>
+
+    <span class="form-organizer">
+      <label>Mixed Doubles:</label>
+        <select name="mixedDoubles" id="mixed-doubles">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+    </span>
+
+    <button type="submit">Add League</button>
+  </form>
+</div>
 
 <%- include('../partials/footer') %>

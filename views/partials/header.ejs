@@ -6,14 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><%= title %></title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Risque&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav>
     <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a> | 
-    <a href="/leagues" <%- title === 'Find a League' ? 'class="active"' : '' %>>FIND A LEAGUE</a> | 
+    <a href="/leagues" <%- title === 'Find a League' ? 'class="active"' : '' %>><%= user ? 'JOIN A LEAGUE' : 'BROWSE LEAGUES' %></a> | 
   <% if (user) { %>
     <a href="" <%- title === '' ? 'class="active"' : '' %>></a>
-    <a href="/logout">LOG OUT</a>
+    <a href="/logout" class="logout">LOG OUT</a>
   <% } else { %>
     <a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a>
   <% } %>

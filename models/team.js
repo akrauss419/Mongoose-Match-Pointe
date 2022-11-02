@@ -17,7 +17,14 @@ const teamSchema = new Schema ({
     league: {
         type: Schema.Types.ObjectId,
         ref: 'League'
-    }
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: String,
+    userAvatar: String
 }, {
     timestamps: true
 });

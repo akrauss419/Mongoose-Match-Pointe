@@ -1,17 +1,35 @@
 <%- include('../partials/header') %>
 
-<h2><%= league.skillLevel %></h2>
+<div class="home-page">
+    <h2 id="league-name"><%= league.skillLevel %></h2>
 
-<h3>TEAMS</h3>
-<section>
-    <ul>
-        <% teams.map(function(t) { %>
-            <li><%= t.name %><a href="/<%= t._id %>">Team Home Page</a></li>
-        <% }) %>
-    </ul>
-</section>
+    <table id="standings">
+        <thead>
+            <tr>
+                <th id="teams-label">TEAMS</th>
+                <th class="record-label">W</th>
+                <th class="record-label">L</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% teams.map(function(t) { %>
+                <tr>
+                    <td><%= t.name %></td>
+                    <td class="record"><%= t.wins %></td>
+                    <td class="record"><%= t.losses %></td>
+                    <td><a href="/leagues/<%= league._id %>/teams/<%= t._id %>" class="team-options">Team Home Page</a>
+                    <% if (user?._id.equals(t.user)) { %>
+                        <a href="/leagues/<%= league._id %>/teams/<%= t._id %>/edit" class="team-options">Edit Team</a>
+                        <form action="/teams/<%= t._id %>?_method=DELETE" method="POST" id="delete-team">
+                            <button type="submit" class="delete">X</button>
+                        </form></td>
+                    <% } %>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
 
-<a href="/leagues/<%= league._id %>/teams/new">Add a New Team</a>
-
+    <a href="/leagues/<%= league._id %>/teams/new" class="add" id="add-team">Add a New Team</a>
+</div>
 
 <%- include('../partials/footer') %>

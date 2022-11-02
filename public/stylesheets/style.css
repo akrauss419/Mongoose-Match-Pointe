@@ -1,19 +1,365 @@
+* {
+  box-sizing: border-box;
+}
+
+title {
+  text-align: right;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("https://www.thedelite.com/wp-content/uploads/2019/04/GettyImages-1143720520-1.jpg");
+  background-size: cover;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  height: 12vmin;
+  border-radius: 4vmin;
+  background-color: rgb(112, 189, 82);
+}
+
+nav > a {
+  margin: auto 3vmin;
+  font-size: 3vmin;
+}
+
+nav:first-child {
+  padding-left: 1vmin;
+}
+
+nav:last-child {
+  padding-right: 1vmin;
+}
+
+h1 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 10vmin;
+  margin-left: 2vmin;
+  text-align: center;
+  color: white;
+}
+
+h2 {
+  font-family: 'Risque', cursive;
+  font-size: 4vmin;
+  margin: 2vmin 4vmin;  
+  padding-top: 4vmin;
+}
+
+h3 {
+  font-family: 'Risque', cursive;
+  font-size: 6vmin;
+  margin: 2vmin 8vmin;
+  padding-top: 3vmin;
+}
+
+h4 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 4vmin;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 2vmin;
+  margin: 2vmin;
+}
+
+th {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 2.5vmin;
+  text-align: center;
+  padding: 0 2vmin;
+  padding-bottom: 2vmin;
+}
+
+td {
+  font-family: 'Nova Flat', cursive;
+  font-size: 6vmin;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 4vmin;
+}
+
+li {
+  font-family: 'Nova Flat', cursive;
+  font-size: 5vmin;
+}
+
+li > a {
+  font-size: 4vmin;
+}
+
+label {
+  font-family: 'Nova Flat', cursive;
+  font-size: 3vmin;
+  margin: auto 4vmin;
+}
+
+button {
+  height: 4vmin;
+  width: 16vmin;
+  font-size: 2vmin;
+  display: block;
+  margin: 3vmin 6vmin;
+}
+
+select {
+  height: 4vmin;
+  width: 5vmin;
+}
+
+input {
+  height: 4vmin;
+  width: 30vmin;
 }
 
 .login {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
+  align-self: flex-end;
+  margin-left: auto;
 }
 
 .login img {
   height: 30px;
+}
+
+.logout {
+  display: flex;
+  margin-left: auto;
+}
+
+.home-page {
+  height: 100vmin;
+  width: 184vmin;
+  max-width: 100%;
+  background-color:rgb(35, 208, 159);
+  border-radius: 4vmin;
+  position: relative;
+}
+
+.team-list {
+  width: 184vmin;
+  display: inline-block;
+  margin: 2vmin;
+}
+
+.team-options {
+  font-size: 3vmin;
+  background-color: rgb(255, 95, 21);
+  border-radius: 4vmin;
+  padding: 1vmin 2vmin;
+}
+
+.league-format {
+  font-size: 4vmin;
+}
+
+.record-label {
+  font-size: 4vmin;
+  text-decoration: underline;
+  padding-left: 8vmin;
+  padding-bottom: 0;
+}
+
+.record {
+  font-size: 4vmin;
+  padding-left: 6vmin;
+}
+
+.add {
+  font-family: 'Nova Flat', cursive;
+  font-size: 4vmin;
+  margin: 4vmin;
+  padding: 1vmin 3vmin;
+  background-color: rgb(112, 189, 82);
+  border-radius: 4vmin;
+}
+
+.add-edit-form {
+  height: 100vmin;
+  width: 80vmin;
+  margin: auto;
+  background-color:rgb(35, 208, 159);
+  border-radius: 4vmin;
+}
+
+.form-organizer {
+  width: 80vmin;
+  display: inline-block;
+  margin: 2vmin;
+}
+
+.delete {
+  width: 4.5vmin;
+  color: red;
+  font-size: 3vmin;
+  font-weight: bold;
+  margin-left: 1vmin;
+}
+
+#welcome {
+  height: 50vmin;
+  width: 94vmin;
+  border-radius: 4vmin;
+  background-color: rgb(35, 208, 159);
+  margin: auto;
+  text-align: center;
+}
+
+#welcome > h2 {
+  font-size: 4.5vmin;
+  padding-top: 7vmin;
+  padding-bottom: 12vmin;
+}
+
+#welcome > h4 {
+  font-size: 3vmin;
+  text-align: left;
+  margin-left: 4vmin;
+  margin-right: 4vmin;
+}
+
+#league-name {
+  font-size: 10vmin;
+  padding-top: 5vmin;
+  margin-left: 8vmin;
+}
+
+#team-name {
+  font-size: 10vmin;
+  padding-top: 5vmin;
+}
+
+#teams-label {
+  font-family: 'Risque', cursive;
+  font-size: 7vmin;
+  margin: 2vmin 8vmin;
+  padding-top: 3vmin;
+}
+
+#index-title {
+  font-size: 6vmin;
+  margin-bottom: 4vmin;
+}
+
+#league-index {
+  height: 100vmin;
+  width: 188vmin;
+  max-width: 100%;
+  background-color:rgb(35, 208, 159);
+  border-radius: 4vmin;
+}
+
+#view-league {
+  font-size: 2vmin;
+  background-color: rgb(255, 95, 21);
+  border-radius: 4vmin;
+  padding: 1vmin 2vmin;
+  margin-bottom: 2vmin;
+}
+
+#team-properties {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#standings {
+  border-collapse: separate;
+  border-spacing: 10vmin 2vmin;
+  margin-left: -5vmin;
+}
+
+#add-team {
+  margin-left: 6vmin;
+}
+
+#delete-team {
+  display: inline-block;
+}
+
+#join {
+  font-family: 'Nova Flat', cursive;
+  font-size: 4vmin;
+  margin: 4vmin;
+  padding: 1vmin 3vmin;
+  background-color: red;
+  border-radius: 4vmin;
+}
+
+#join-team {
+  position: absolute;
+  bottom: 10vmin;
+  right: 4vmin;
+}
+
+#match-format-label {
+  font-family: 'Risque', cursive;
+  font-size: 4vmin;
+  font-weight: bold;
+}
+
+#skill-level {
+  width: 6.5vmin;
+}
+
+#mens-singles {
+  margin-left: 16.3vmin;
+}
+
+#womens-singles {
+  margin-left: 12.1vmin;
+}
+
+#mens-doubles {
+  margin-left: 15.4vmin;
+}
+
+#womens-doubles {
+  margin-left: 11.1vmin;
+}
+
+#mixed-doubles {
+  margin-left: 15.2vmin;
+}
+
+#team-input {
+  margin-left: 14.6vmin;
+}
+
+#wins {
+  height: 4vmin;
+  width: 5vmin;
+  margin-left: 23.4vmin;
+}
+
+#losses {
+  height: 4vmin;
+  width: 5vmin;
+  margin-left: 21.3vmin;
+}
+
+#practices {
+  margin-left: 5vmin;
+}
+
+#add-to-league {
+  width: 24vmin;
+}
+
+#update-team {
+  width: 24vmin;
 }

@@ -7,8 +7,35 @@ const leagueSchema = new Schema ({
         type: String,
         enum: ['5.0', '4.5', '4.0', '3.5', '3.0']
     },
+    mensSingles: {
+        type: Number,
+        enum: [1, 2, 3, 4]
+    },
+    womensSingles: {
+        type: Number,
+        enum: [1, 2, 3, 4]
+    },
+    mensDoubles: {
+        type: Number,
+        enum: [1, 2, 3, 4]
+    },
+    womensDoubles: {
+        type: Number,
+        enum: [1, 2, 3, 4]
+    },
+    mixedDoubles: {
+        type: Number,
+        enum: [1, 2, 3, 4]
+    },
     standings: String,
-    scores: String
+    scores: String,
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: String,
+    userAvatar: String
 }, {
     timestamps: true
 });

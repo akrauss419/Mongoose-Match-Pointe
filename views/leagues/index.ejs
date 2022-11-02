@@ -1,16 +1,40 @@
 <%- include('../partials/header') %>
 
-<h2>What's your skill level? (Choose a League)</h2>
-<div>
-    <ul>
-        <% leagues.map(function(l) { %>
-        <li><%= l.skillLevel %><a href="/leagues/<%= l._id %>">View League Page</a></li>
-        <% }) %>
-    </ul>
-</div>
-
-<div>
-    <a href="/leagues/new">Add a League</a>
+<div id="league-index">
+    <h2 id="index-title">What's your skill level? (Choose a League)</h2>
+    <table>
+        <thead>
+          <tr>
+            <th>LEAGUE:</th>
+            <th>M. SINGLES:</th>
+            <th>W. SINGLES:</th>
+            <th>M. DOUBLES:</th>
+            <th>W. DOUBLES:</th>
+            <th>MIXED DOUBLES:</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% leagues.map(function(l) { %>
+                <tr>
+                    <td><%= l.skillLevel %></td>
+                    <td class="league-format"><%= l.mensSingles %></td>
+                    <td class="league-format"><%= l.womensSingles %></td>
+                    <td class="league-format"><%= l.mensDoubles %></td>
+                    <td class="league-format"><%= l.womensDoubles %></td>
+                    <td class="league-format"><%= l.mixedDoubles %></td>
+                    <td class="league-format"><a href="/leagues/<%= l._id %>" id="view-league">View League Page</a></td>
+                        <% if (user?._id.equals(l.user)) { %>
+                            <td><form action="/leagues/<%= l._id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="delete">X</button>
+                            </form></td>
+                        <% } %>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <div>
+        <a href="/leagues/new" class="add">Add a League</a>
+    </div>
 </div>
 
 <%- include('../partials/footer') %>
