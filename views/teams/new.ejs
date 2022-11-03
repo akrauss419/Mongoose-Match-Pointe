@@ -5,27 +5,23 @@
     <form action="/leagues/<%= leagueId %>/teams" method="POST">
 
         <span class="form-organizer">
-            <label>Team Name:
-                <input type="text" name="name" id="team-input">
-            </label>
+            <label>Team Name:</label>
+            <input type="text" name="name" id="team-input">
         </span>
 
         <span class="form-organizer">
-            <label>Wins:
-                <input type="number" name="wins" value="0" id="wins">
-            </label>
+            <label>Wins:</label>
+            <input type="number" name="wins" value="0" id="wins">
         </span>
 
         <span class="form-organizer">
-            <label>Losses:
-                <input type="number" name="losses" value="0" id="losses">
-            </label>
+            <label>Losses:</label>
+            <input type="number" name="losses" value="0" id="losses">
         </span>
 
         <span class="form-organizer">
-            <label>Practice Schedule:
-                <input type="datetime-local" name="practices" id="practices">
-            </label>
+            <label>Practice Schedule:</label>
+            <input type="datetime-local" name="practices" id="practices">
         </span>
 
         <button type="submit" id="add-to-league">Add Team to League</button>

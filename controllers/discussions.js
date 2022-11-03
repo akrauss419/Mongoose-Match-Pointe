@@ -2,7 +2,9 @@ const Discussion = require('../models/discussion');
 
 module.exports = {
     index,
-    show
+    show,
+    new: newDiscussion,
+    create
 };
 
 function index(req, res) {
@@ -14,5 +16,19 @@ function index(req, res) {
 function show(req, res) {
     Discussion.findById(req.params.id, function(err, discussion) {
         res.render('discussions/show', { title: 'Discussion Thread', discussion })
+    });
+}
+
+function newDiscussion(req, res) {
+    res.render('discussions/new', { title: 'Start a Discussion' });
+}
+
+function create(req, res) {
+    req.body.user = req.user._id;
+    const discussion = new Discussion(req.body);
+    discussion.save(function(err) {
+        console.log(err);
+        if (err) return res.redirect('discussions/new');
+        res.redirect(`/discussions/${discussion._id}`);
     });
 }

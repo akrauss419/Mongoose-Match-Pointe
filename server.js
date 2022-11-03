@@ -44,7 +44,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/leagues', leaguesRouter);
 app.use('/', teamsRouter);
-app.use('/', discussionsRouter);
+app.use('/discussions', discussionsRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));

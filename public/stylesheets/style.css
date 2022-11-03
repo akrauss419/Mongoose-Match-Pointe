@@ -41,6 +41,11 @@ nav:last-child {
   padding-right: 1vmin;
 }
 
+p {
+  font-size: 5vmin;
+  font-weight: bolder;
+}
+
 h1 {
   font-family: 'Fredericka the Great', cursive;
   font-size: 10vmin;
@@ -126,6 +131,13 @@ input {
   width: 30vmin;
 }
 
+textarea {
+  height: 25vmin;
+  width: 55vmin;
+  align-self: left;
+  margin: 2vmin 5vmin;
+}
+
 .login {
   display: flex;
   align-self: flex-end;
@@ -172,6 +184,10 @@ input {
   text-decoration: underline;
   padding-left: 8vmin;
   padding-bottom: 0;
+}
+
+.discussion-label {
+  margin-left: 5vmin;
 }
 
 .record {
@@ -356,10 +372,37 @@ input {
   margin-left: 5vmin;
 }
 
+#topic-input {
+  margin: 2vmin 5vmin 6vmin 5vmin;
+}
+
 #add-to-league {
   width: 24vmin;
 }
 
 #update-team {
   width: 24vmin;
+}
+
+#discussion-header {
+  height: 20vh;
+  max-width: 100%;
+  background-color: rgb(112, 189, 82);
+}
+
+#discussion-intro {
+  font-size: 3vmin;
+}
+
+#discussion-form-organizer {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  align-items: stretch;
+}
+
+#post-discussion {
+  width: 20vmin;
+  margin-top: 4vmin;
+  margin-left: 5vmin;
 }

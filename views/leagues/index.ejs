@@ -2,6 +2,7 @@
 
 <div id="league-index">
     <h2 id="index-title">What's your skill level? (Choose a League)</h2>
+
     <table>
         <thead>
           <tr>
@@ -24,17 +25,21 @@
                     <td class="league-format"><%= l.mixedDoubles %></td>
                     <td class="league-format"><a href="/leagues/<%= l._id %>" id="view-league">View League Page</a></td>
                         <% if (user?._id.equals(l.user)) { %>
-                            <td><form action="/leagues/<%= l._id %>?_method=DELETE" method="POST">
-                                <button type="submit" class="delete">X</button>
-                            </form></td>
+                            <td>
+                                <form action="/leagues/<%= l._id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="delete">X</button>
+                                </form>
+                            </td>
                         <% } %>
                 </tr>
             <% }); %>
         </tbody>
     </table>
+
     <div>
         <a href="/leagues/new" class="add">Add a League</a>
     </div>
+
 </div>
 
 <%- include('../partials/footer') %>

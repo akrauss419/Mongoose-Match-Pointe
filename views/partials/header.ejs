@@ -18,10 +18,10 @@
 </head>
 <body>
   <nav>
-    <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a> | 
-    <a href="/leagues" <%- title === 'Find a League' ? 'class="active"' : '' %>><%= user ? 'JOIN A LEAGUE' : 'BROWSE LEAGUES' %></a> | 
+    <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a> <p>|</p> 
+    <a href="/leagues" <%- title === 'Find a League' ? 'class="active"' : '' %>><%= user ? 'JOIN A LEAGUE' : 'BROWSE LEAGUES' %></a> <p>|</p> 
   <% if (user) { %>
-    <a href="disucssions" <%- title === 'Discussion Board' ? 'class="active"' : '' %>>DISCUSSION BOARD</a>
+    <a href="/discussions" <%- title === 'Discussion Board' ? 'class="active"' : '' %>>DISCUSSION BOARD</a>
     <a href="/logout" class="logout">LOG OUT</a>
   <% } else { %>
     <a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a>

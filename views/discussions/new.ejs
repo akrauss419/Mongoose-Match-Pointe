@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<div class="add-edit-form">
+    <h2>Start a New Discussion</h2>
+    <form action="/discussions" method="POST">
+
+        <span id="discussion-form-organizer">
+            <label class="discussion-label">Topic:</label>
+            <input type="text" name="topic" id="topic-input">
+
+            <label class="discussion-label">What's on your mind?</label>
+            <textarea name="content"></textarea>
+        </span>
+
+        <button type="submit" id="post-discussion">Post Discussion</button>
+    </form>
+</div>
+
+<%- include('../partials/footer') %>
