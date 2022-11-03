@@ -7,20 +7,26 @@
 
 <div class="home-page">
 
-    <div>
-        <% discussions.map(function(d) { %>
-            <h2><%= d.topic %></h2>
-            <h4 class="discussion-user"><img src="<%= d.userAvatar %>" referrerpolicy="no-referrer"> <%= d.userName %></h4>
-            <h4><%= d.createdAt.toLocaleDateString() %></h4>
-            <section><%= d.content %></section>
-            <% if (user?._id.equals(d.user)) { %>
-                <a href="/discussions/<%= d._id %>/edit" class="team-options">Edit</a>
-                <form action="/discussions/<%= d._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                </form>
-            <% } %>
-        <% }); %>
-    </div>
+    <% discussions.map(function(d) { %>
+        <table>
+            <thead>
+                <tr>
+                    <td><%= d.topic %></td>
+                    <td><img src="<%= d.userAvatar %>" referrerpolicy="no-referrer"> <%= d.userName %></td>
+                    <td><%= d.createdAt.toLocaleDateString() %></td>
+                    <td><a href="/discussions/<%= d._id %>" class="team-options">View Thread</a></td>
+                    <td>
+                        <% if (user?._id.equals(d.user)) { %>
+                        <a href="/discussions/<%= d._id %>/edit" class="team-options">Edit</a>
+                        <form action="/discussions/<%= d._id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
+                        <% } %>
+                    </td>
+                </tr>
+            </thead>
+        </table>
+    <% }); %>
 
     <div>
         <a href="/discussions/new" class="add">Start New Discussion</a>

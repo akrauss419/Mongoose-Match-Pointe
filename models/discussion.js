@@ -2,6 +2,22 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+const commentSchema = new Schema ({
+    content: {
+        type: String,
+        required: true
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: String,
+    userAvatar: String
+}, {
+    timestamps: true
+});
+
 const discussionSchema = new Schema ({
     topic: {
         type: String,
@@ -11,6 +27,7 @@ const discussionSchema = new Schema ({
         type: String,
         required: true
     },
+    comments: [commentSchema],
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',

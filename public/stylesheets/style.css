@@ -385,13 +385,14 @@ textarea {
 }
 
 #discussion-header {
-  height: 20vh;
+  height: 15vh;
   max-width: 100%;
   background-color: rgb(112, 189, 82);
+  border-radius: 4vmin;
 }
 
 #discussion-intro {
-  font-size: 3vmin;
+  font-size: 3.5vmin;
 }
 
 #discussion-form-organizer {

@@ -18,7 +18,7 @@ function index(req, res) {
 }
 
 function show(req, res) {
-    Discussion.findById(req.params.id, function(err, discussion) {
+    Discussion.findOne({_id: req.params.id }, function(err, discussion) {
         res.render('discussions/show', { title: 'Discussion Thread', discussion })
     });
 }
@@ -29,6 +29,8 @@ function newDiscussion(req, res) {
 
 function create(req, res) {
     req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
     const discussion = new Discussion(req.body);
     discussion.save(function(err) {
         console.log(err);

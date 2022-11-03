@@ -1,5 +1,51 @@
 <%- include('../partials/header') %>
 
+<div>
+    <h2><%= discussion.topic %></h2>
+    <h4 class="discussion-user"><img src="<%= discussion.userAvatar %>" referrerpolicy="no-referrer"> <%= discussion.userName %></h4>
+    <h4><%= discussion.createdAt.toLocaleDateString() %></h4>
+    <section><%= discussion.content %></section>
+    <% if (user?._id.equals(discussion.user)) { %>
+        <a href="/discussions/<%= discussion._id %>/edit" class="team-options">Edit</a>
+        <form action="/discussions/<%= discussion._id %>?_method=DELETE" method="POST">
+            <button type="submit">X</button>
+        </form>
+    <% } %>
+</div>
 
+<h4>Comments</h4>
+<% if (discussion.comments.length) { %>
+    <table>
+        <tbody>
+            <% discussion.comments.forEach(function(c) { %>
+            <tr>
+                <td><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer"></td>
+                <td><%= c.userName %></td>
+            </tr>
+            <tr>
+                <td><%= c.createdAt.toLocaleDateString() %></td>
+            </tr>
+            <tr>
+                <td><%= c.content %></td>
+            </tr>
+            <tr>
+                <td>
+                    <form action="/discussions/<%= discussion._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="delete">X</button>
+                    </form>
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+<% } else { %>
+    <h5>No Comments Yet</h5>
+<% } %>
+    
+<form action="/discussions/<%= discussion._id %>/comments" method="POST">
+    <label>Have anything to say?</label>
+    <textarea name="content"></textarea>
+    <button type="submit">Add comment</button>
+</form>
 
 <%- include('../partials/footer') %>

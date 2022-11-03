@@ -16,6 +16,7 @@ var usersRouter = require('./routes/users');
 var leaguesRouter = require('./routes/leagues');
 var teamsRouter = require('./routes/teams');
 var discussionsRouter = require('./routes/discussions');
+var commentsRouter = require('./routes/comments');
 
 var app = express();
 
@@ -45,6 +46,7 @@ app.use('/users', usersRouter);
 app.use('/leagues', leaguesRouter);
 app.use('/', teamsRouter);
 app.use('/discussions', discussionsRouter);
+app.use('/', commentsRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
