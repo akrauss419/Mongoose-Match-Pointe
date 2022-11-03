@@ -190,6 +190,13 @@ textarea {
   margin-left: 5vmin;
 }
 
+.discussion-options {
+  font-size: 2vmin;
+  background-color: rgb(255, 95, 21);
+  border-radius: 4vmin;
+  padding: 1vmin 2vmin;
+}
+
 .record {
   font-size: 4vmin;
   padding-left: 6vmin;
@@ -224,6 +231,21 @@ textarea {
   font-size: 3vmin;
   font-weight: bold;
   margin-left: 1vmin;
+}
+
+.straighten-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-image {
+  border-radius: 50%;
+  height: 8vmin;
+}
+
+#discussion-index {
+  font-size: 3.5vmin;
 }
 
 #welcome {
@@ -406,4 +428,8 @@ textarea {
   width: 20vmin;
   margin-top: 4vmin;
   margin-left: 5vmin;
+}
+
+#edit-comment-title {
+  padding-bottom: 3vmin;
 }

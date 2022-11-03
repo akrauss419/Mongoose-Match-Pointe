@@ -10,16 +10,16 @@
     <% discussions.map(function(d) { %>
         <table>
             <thead>
-                <tr>
+                <tr class="straighten-row">
                     <td><%= d.topic %></td>
-                    <td><img src="<%= d.userAvatar %>" referrerpolicy="no-referrer"> <%= d.userName %></td>
-                    <td><%= d.createdAt.toLocaleDateString() %></td>
-                    <td><a href="/discussions/<%= d._id %>" class="team-options">View Thread</a></td>
-                    <td>
+                    <td class="straighten-row" id="discussion-index"><img src="<%= d.userAvatar %>" class="user-image" referrerpolicy="no-referrer"><%= d.userName %></td>
+                    <td id="discussion-index"><%= d.createdAt.toLocaleDateString() %></td>
+                    <td><a href="/discussions/<%= d._id %>" class="discussion-options">View Thread</a></td>
+                    <td class="straighten-row">
                         <% if (user?._id.equals(d.user)) { %>
-                        <a href="/discussions/<%= d._id %>/edit" class="team-options">Edit</a>
+                        <a href="/discussions/<%= d._id %>/edit" class="discussion-options">Edit</a>
                         <form action="/discussions/<%= d._id %>?_method=DELETE" method="POST">
-                            <button type="submit">X</button>
+                            <button type="submit" class="delete">X</button>
                         </form>
                         <% } %>
                     </td>

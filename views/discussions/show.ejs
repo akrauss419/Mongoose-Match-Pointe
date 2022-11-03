@@ -30,6 +30,7 @@
             </tr>
             <tr>
                 <td>
+                    <a href="/discussions/<%= c._id %>/editComment">Edit Comment</a>
                     <form action="/discussions/<%= discussion._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
                         <button type="submit" class="delete">X</button>
                     </form>
