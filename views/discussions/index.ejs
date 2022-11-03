@@ -14,6 +14,7 @@
             <h4><%= d.createdAt.toLocaleDateString() %></h4>
             <section><%= d.content %></section>
             <% if (user?._id.equals(d.user)) { %>
+                <a href="/discussions/<%= d._id %>/edit" class="team-options">Edit</a>
                 <form action="/discussions/<%= d._id %>?_method=DELETE" method="POST">
                     <button type="submit">X</button>
                 </form>

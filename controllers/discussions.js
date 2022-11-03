@@ -6,6 +6,8 @@ module.exports = {
     show,
     new: newDiscussion,
     create,
+    edit,
+    update,
     delete: deleteDiscussion,
 };
 
@@ -33,6 +35,25 @@ function create(req, res) {
         if (err) return res.redirect('discussions/new');
         res.redirect(`/discussions/${discussion._id}`);
     });
+}
+
+function edit(req, res) {
+    Discussion.findById(req.params.id, function(err, discussion) {
+        if (err || !discussion) return res.redirect(`/discussions/${req.params.id}`);
+        res.render('discussions/edit', { title: 'Discussion Thread', discussion});
+    });
+}
+
+function update(req, res) {
+    Discussion.findOneAndUpdate(
+        {_id: req.params.id},
+        req.body,
+        {new: true},
+        function(err, discussion) {
+            if (err || !discussion) return res.redirect(`/discussions/${req.params.id}/edit`);
+            res.redirect(`/discussions/${discussion._id}`);
+        }
+    );
 }
 
 function deleteDiscussion(req, res) {
