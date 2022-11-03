@@ -1,18 +1,23 @@
 <%- include('../partials/header') %>
 
-<div>
-    <h3>If you're looking for help on your forehand, reccommendations for a new racket, 
+<div id="discussion-header">
+    <h3 id="discussion-intro">If you're looking for help on your forehand, reccommendations for a new racket, 
         or just want to talk about Wimbledon, this is the place to talk all things tennis!</h3>
 </div>
 
 <div class="home-page">
-    
+
     <div>
         <% discussions.map(function(d) { %>
             <h2><%= d.topic %></h2>
             <h4 class="discussion-user"><img src="<%= d.userAvatar %>" referrerpolicy="no-referrer"> <%= d.userName %></h4>
             <h4><%= d.createdAt.toLocaleDateString() %></h4>
             <section><%= d.content %></section>
+            <% if (user?._id.equals(d.user)) { %>
+                <form action="/discussions/<%= d._id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                </form>
+            <% } %>
         <% }); %>
     </div>
 

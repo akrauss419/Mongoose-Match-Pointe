@@ -7,5 +7,6 @@ router.get('/', ensureLoggedIn, discussionsCtrl.index);
 router.get('/new', ensureLoggedIn, discussionsCtrl.new);
 router.get('/:id', ensureLoggedIn, discussionsCtrl.show);
 router.post('/', ensureLoggedIn, discussionsCtrl.create);
+router.delete('/:id', ensureLoggedIn, discussionsCtrl.delete);
 
 module.exports = router;

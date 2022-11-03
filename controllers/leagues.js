@@ -39,7 +39,7 @@ function create(req, res) {
 
 function deleteLeague(req, res) {
     League.findOneAndDelete(
-        {_id: req.params.id, userRecommending: req.user._id}, function (err) {
+        {_id: req.params.id, userRecommending: req.user._id}, function(err) {
             res.redirect('/leagues');
         }
     );

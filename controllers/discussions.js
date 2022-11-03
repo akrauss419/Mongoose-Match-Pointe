@@ -1,10 +1,12 @@
 const Discussion = require('../models/discussion');
+const league = require('../models/league');
 
 module.exports = {
     index,
     show,
     new: newDiscussion,
-    create
+    create,
+    delete: deleteDiscussion,
 };
 
 function index(req, res) {
@@ -31,4 +33,12 @@ function create(req, res) {
         if (err) return res.redirect('discussions/new');
         res.redirect(`/discussions/${discussion._id}`);
     });
+}
+
+function deleteDiscussion(req, res) {
+    Discussion.findOneAndDelete(
+        {_id: req.params.id, userRecommending: req.user._id}, function(err) {
+            res.redirect('/discussions');
+        }
+    );
 }
