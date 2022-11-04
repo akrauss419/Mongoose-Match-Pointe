@@ -73,6 +73,13 @@ h4 {
   font-size: 4vmin;
 }
 
+h5 {
+  font-family: 'Nova Flat', cursive;
+  font-size: 5vmin;
+  margin-top: -8vmin;
+  margin-left: 1vmin;
+}
+
 table {
   border-collapse: separate;
   border-spacing: 0 2vmin;
@@ -138,6 +145,13 @@ textarea {
   margin: 2vmin 5vmin;
 }
 
+section {
+  font-family: 'Risque', cursive;
+  font-size: 4vmin;
+  margin-left: 4vmin;
+  margin-bottom: 4vmin;
+}
+
 .login {
   display: flex;
   align-self: flex-end;
@@ -160,6 +174,7 @@ textarea {
   background-color:rgb(35, 208, 159);
   border-radius: 4vmin;
   position: relative;
+  overflow: auto;
 }
 
 .team-list {
@@ -242,6 +257,17 @@ textarea {
 .user-image {
   border-radius: 50%;
   height: 8vmin;
+}
+
+.comment-thread {
+  height: 45vmin;
+  width: 184vmin;
+  max-width: 100%;
+  background-color:rgb(112, 189, 82);
+  border-radius: 4vmin;
+  position: relative;
+  overflow: auto;
+  margin: 3vmin auto;
 }
 
 #discussion-index {
@@ -411,10 +437,35 @@ textarea {
   max-width: 100%;
   background-color: rgb(112, 189, 82);
   border-radius: 4vmin;
+  margin: 2vmin auto;
 }
 
 #discussion-intro {
   font-size: 3.5vmin;
+}
+
+#discussion-table {
+  border-spacing: 3vmin;
+}
+
+#discussion-table tr td:nth-child(1) {
+  width: 60vmin;
+}
+
+#discussion-table tr td:nth-child(2) {
+  width: 35vmin;
+}
+
+#discussion-table tr td:nth-child(3) {
+  width: 25vmin;
+}
+
+#discussion-table tr td:nth-child(4) {
+  width: 20vmin;
+}
+
+#discussion-table tr td:nth-child(4) {
+  width: 20vmin;
 }
 
 #discussion-form-organizer {
@@ -422,6 +473,14 @@ textarea {
   flex-direction: column;
   align-content: space-between;
   align-items: stretch;
+}
+
+#comment-form-organizer {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  align-items: stretch;
+  justify-items: center;
 }
 
 #post-discussion {
@@ -432,4 +491,78 @@ textarea {
 
 #edit-comment-title {
   padding-bottom: 3vmin;
+}
+
+#discussion-thread {
+  height: 60vmin;
+  width: 184vmin;
+  max-width: 100%;
+  background-color:rgb(35, 208, 159);
+  border-radius: 4vmin;
+  position: relative;
+  overflow: auto;
+}
+
+#thread-topic {
+  font-family: 'Nova Flat', cursive;
+  font-size: 8vmin;
+  margin-top: auto;
+}
+
+#thread-details {
+  display: flex;
+  margin-top: -2vmin;
+}
+
+#thread-author {
+  font-family: 'Nova Flat', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 4vmin;
+}
+
+#thread-date {
+  font-family: 'Nova Flat', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8vmin;
+}
+
+#thread-links {
+  display: flex;
+  align-items: baseline;
+  margin-left: 4vmin;
+}
+
+#edit-thread {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#comment {
+  font-family: 'Risque', cursive;
+  font-size: 4vmin;
+  margin-left: 4vmin;
+  margin-bottom: 4vmin;
+}
+
+#comment-label {
+  font-size: 8vmin;
+  margin: 2vmin 0 0 1vmin;
+}
+
+#comment-form {
+  display: block;
+}
+
+#text-label {
+  margin-top: 10vmin;
+  margin-left: 5vmin;
+}
+
+#add-comment-button {
+  margin-left: 5vmin;
 }

@@ -1,52 +1,51 @@
 <%- include('../partials/header') %>
 
-<div>
-    <h2><%= discussion.topic %></h2>
-    <h4 class="discussion-user"><img src="<%= discussion.userAvatar %>" referrerpolicy="no-referrer"> <%= discussion.userName %></h4>
-    <h4><%= discussion.createdAt.toLocaleDateString() %></h4>
+<div id="discussion-thread">
+    <h2 id="thread-topic"><%= discussion.topic %></h2>
+    <div id="thread-details">
+        <h4 id="thread-author"><img src="<%= discussion.userAvatar %>" class="user-image" referrerpolicy="no-referrer"> <%= discussion.userName %></h4>
+        <h4 id="thread-date"><%= discussion.createdAt.toLocaleDateString() %></h4>
+    </div>
     <section><%= discussion.content %></section>
     <% if (user?._id.equals(discussion.user)) { %>
-        <a href="/discussions/<%= discussion._id %>/edit" class="team-options">Edit</a>
-        <form action="/discussions/<%= discussion._id %>?_method=DELETE" method="POST">
-            <button type="submit">X</button>
-        </form>
+        <div id="thread-links">
+            <a href="/discussions/<%= discussion._id %>/edit" class="team-options" id="edit-thread">Edit</a>
+            <form action="/discussions/<%= discussion._id %>?_method=DELETE" method="POST">
+                <button type="submit" class="delete">X</button>
+            </form>
+        </div>
     <% } %>
 </div>
 
-<h4>Comments</h4>
+<h4 id="comment-label">Comments</h4>
 <% if (discussion.comments.length) { %>
-    <table>
-        <tbody>
-            <% discussion.comments.forEach(function(c) { %>
-            <tr>
-                <td><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer"></td>
-                <td><%= c.userName %></td>
-            </tr>
-            <tr>
-                <td><%= c.createdAt.toLocaleDateString() %></td>
-            </tr>
-            <tr>
-                <td><%= c.content %></td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="/discussions/<%= c._id %>/editComment">Edit Comment</a>
-                    <form action="/discussions/<%= discussion._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="delete">X</button>
-                    </form>
-                </td>
-            </tr>
-            <% }); %>
-        </tbody>
-    </table>
+    <div class="comment-thread">
+        <% discussion.comments.forEach(function(c) { %>
+            <div id="thread-details">
+                <h4 id="thread-author"><img alt="avatar" src="<%= c.userAvatar %>" class="user-image" referrerpolicy="no-referrer"><%= c.userName %></h4>
+                <h4 id="thread-date"><%= c.createdAt.toLocaleDateString() %></h4>
+            </div>
+                <section id="comment"><%= c.content %></section>
+                    <div id="thread-links">
+                        <a href="/discussions/<%= c._id %>/editComment" class="team-options" id="edit-thread">Edit Comment</a>
+                        <form action="/discussions/<%= discussion._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="delete">X</button>
+                        </form>
+                    </div>
+        <% }); %>
+    </div>
 <% } else { %>
     <h5>No Comments Yet</h5>
 <% } %>
     
-<form action="/discussions/<%= discussion._id %>/comments" method="POST">
-    <label>Have anything to say?</label>
-    <textarea name="content"></textarea>
-    <button type="submit">Add comment</button>
-</form>
+<div class="comment-thread">
+    <span id="comment-form-organizer">
+        <form action="/discussions/<%= discussion._id %>/comments" method="POST" id="">
+            <label id="text-label">Have anything to say?</label>
+            <textarea name="content" id="comment-form"></textarea>
+            <button type="submit" id="add-comment-button">Add Comment</button>
+        </form>
+    </span>
+</div>
 
 <%- include('../partials/footer') %>

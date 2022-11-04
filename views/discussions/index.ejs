@@ -8,13 +8,13 @@
 <div class="home-page">
 
     <% discussions.map(function(d) { %>
-        <table>
-            <thead>
-                <tr class="straighten-row">
+        <table id="discussion-table">
+            <tbody>
+                <tr class="straighten-row" id="discussion-grid">
                     <td><%= d.topic %></td>
                     <td class="straighten-row" id="discussion-index"><img src="<%= d.userAvatar %>" class="user-image" referrerpolicy="no-referrer"><%= d.userName %></td>
                     <td id="discussion-index"><%= d.createdAt.toLocaleDateString() %></td>
-                    <td><a href="/discussions/<%= d._id %>" class="discussion-options">View Thread</a></td>
+                    <td class=" straighten-row"><a href="/discussions/<%= d._id %>" class="discussion-options">View Thread</a></td>
                     <td class="straighten-row">
                         <% if (user?._id.equals(d.user)) { %>
                         <a href="/discussions/<%= d._id %>/edit" class="discussion-options">Edit</a>
@@ -24,7 +24,7 @@
                         <% } %>
                     </td>
                 </tr>
-            </thead>
+            </tbody>
         </table>
     <% }); %>
 
