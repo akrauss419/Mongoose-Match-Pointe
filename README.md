@@ -10,17 +10,17 @@ There is also a discussion board available exclusively to registered users. The 
 
 # Screenshots
 
-<img src="https://imgur.com/a/5ZKLYTY">
-<img src="https://imgur.com/a/n40ksIJ">
-<img src="https://imgur.com/a/C3VN4dG">
-<img src="https://imgur.com/a/ryNNH74">
-<img src="https://imgur.com/a/qGbgqO8">
-<img src="https://imgur.com/a/6SNvHH2">
-<img src="https://imgur.com/a/oGfMq58">
-<img src="https://imgur.com/a/41JMDq6">
-<img src="https://imgur.com/a/6FyTIIw">
-<img src="https://imgur.com/a/a9q1owc">
-<img src="https://imgur.com/a/OrtdzRD">
+<img src="https://i.imgur.com/m1aWyC9.png">
+<img src="https://i.imgur.com/4AXLL4l.png">
+<img src="https://i.imgur.com/xcYt44m.png">
+<img src="https://i.imgur.com/2bmfkkC.png">
+<img src="https://i.imgur.com/kr9FO7H.png">
+<img src="https://i.imgur.com/JFTYOlh.png">
+<img src="https://i.imgur.com/bEEBQTi.png">
+<img src="https://i.imgur.com/PSUwPUy.png">
+<img src="https://i.imgur.com/Ct4T7MV.png">
+<img src="https://i.imgur.com/8evQtWE.png">
+<img src="https://i.imgur.com/s4LxG99.png">
 
 # Technologies Used
 
