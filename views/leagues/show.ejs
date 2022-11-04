@@ -17,13 +17,15 @@
                     <td><%= t.name %></td>
                     <td class="record"><%= t.wins %></td>
                     <td class="record"><%= t.losses %></td>
-                    <td><a href="/leagues/<%= league._id %>/teams/<%= t._id %>" class="team-options">Team Home Page</a>
-                    <% if (user?._id.equals(t.user)) { %>
-                        <a href="/leagues/<%= league._id %>/teams/<%= t._id %>/edit" class="team-options">Edit Team</a>
-                        <form action="/teams/<%= t._id %>?_method=DELETE" method="POST" id="delete-team">
-                            <button type="submit" class="delete">X</button>
-                        </form></td>
-                    <% } %>
+                    <td>
+                        <a href="/leagues/<%= league._id %>/teams/<%= t._id %>" class="team-options">Team Home Page</a>
+                        <% if (user?._id.equals(t.user)) { %>
+                            <a href="/leagues/<%= league._id %>/teams/<%= t._id %>/edit" class="team-options">Edit Team</a>
+                            <form action="/teams/<%= t._id %>?_method=DELETE" method="POST" id="delete-team">
+                                <button type="submit" class="delete">X</button>
+                            </form>
+                        <% } %>
+                    </td>
                 </tr>
             <% }); %>
         </tbody>

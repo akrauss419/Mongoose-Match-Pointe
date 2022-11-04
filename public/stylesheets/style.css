@@ -76,8 +76,8 @@ h4 {
 h5 {
   font-family: 'Nova Flat', cursive;
   font-size: 5vmin;
-  margin-top: -8vmin;
-  margin-left: 1vmin;
+  margin: 3vmin auto 0 1vmin;
+  padding-bottom: 3vmin;
 }
 
 table {
@@ -148,8 +148,7 @@ textarea {
 section {
   font-family: 'Risque', cursive;
   font-size: 4vmin;
-  margin-left: 4vmin;
-  margin-bottom: 4vmin;
+  margin: 0 4vmin 4vmin 4vmin;
 }
 
 .login {
@@ -349,6 +348,7 @@ section {
 
 #add-team {
   margin-left: 6vmin;
+  margin-bottom: 4vmin;
 }
 
 #delete-team {
@@ -536,7 +536,7 @@ section {
   margin-left: 4vmin;
 }
 
-#edit-thread {
+#edit-align {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -556,13 +556,18 @@ section {
 
 #comment-form {
   display: block;
+  position: absolute;
+  margin-top: 10vmin;
 }
 
 #text-label {
-  margin-top: 10vmin;
+  position: absolute;
+  margin-top: 4vmin;
   margin-left: 5vmin;
 }
 
 #add-comment-button {
+  position: absolute;
+  margin-top: 38vmin;
   margin-left: 5vmin;
 }
