@@ -37,6 +37,8 @@ There is also a discussion board available exclusively to registered users. The 
 
 Click to browse Match Pointe --> https://match-pointe.herokuapp.com/
 
+Click to view Trello board --> https://trello.com/b/YutFXmke/project-2
+
 # Next Steps
 
 Allow players, or registered users, to add themselves to rosters by using the "Join Team" button on the team home page.
